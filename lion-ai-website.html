@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LION AI TURBO 1.4</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #000000;
+      color: #e0e0e0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: radial-gradient(circle at center, rgba(0, 229, 255, 0.08) 0%, #000 70%);
+    }
+
+    .emblem {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      background: radial-gradient(circle, #00e5ff 0%, transparent 70%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 0 40px rgba(0, 229, 255, 0.4);
+    }
+
+    .emblem::before {
+      content: "🦁";
+      font-size: 48px;
+      filter: drop-shadow(0 0 10px #00e5ff);
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #00e5ff, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(0, 229, 255, 0.1);
+      border: 1px solid #00e5ff;
+      color: #00e5ff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      max-width: 600px;
+      margin: 0 auto;
+      color: #aaa;
+      font-size: 1.1rem;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .intro h2 {
+      color: #00e5ff;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .ai-container {
+      max-width: 520px;
+      margin: 40px auto 60px;
+      padding: 0 20px;
+    }
+
+    .ai-frame {
+      width: 100%;
+      height: 780px;
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 50px rgba(0, 229, 255, 0.15);
+      background: #000;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #666;
+      font-size: 0.9rem;
+      border-top: 1px solid #111;
+    }
+
+    .footer a {
+      color: #00e5ff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      .ai-frame { height: 650px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="emblem"></div>
+    <div class="badge">LION TURBO 1.4</div>
+    <h1>LION AI</h1>
+    <p class="subtitle">High-velocity intelligence with context-aware multi-turn reasoning and LION Directives.</p>
+  </header>
+
+  <section class="intro">
+    <h2>About</h2>
+    <p>Hi, I’m Mahiru Sanumitha from Sri Lanka. I build personal technology projects under the name <strong>LION PROJECTS</strong>.</p>
+    <br>
+    <p>LION AI is my main project — a futuristic personal AI assistant focused on being useful, reliable, and intelligent. It features Turbo, Strategy, and Code modes, all built with a pure black interface and electric cyan accents.</p>
+    <br>
+    <p><strong>LION PROJECTS — ONE VISION. ONE IDENTITY.</strong></p>
+  </section>
+
+  <div class="ai-container">
+    <div class="ai-frame">
+      <iframe
+        src="https://lion-ai-turbo.ai.studio"
+        title="LION AI TURBO 1.4"
+        allow="clipboard-write"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Built with Google AI Studio • <a href="https://lion-ai-turbo.ai.studio" target="_blank">Open full LION AI</a></p>
+    <p style="margin-top: 8px;">Geometric lion • Pure black • Electric cyan</p>
+  </footer>
+</body>
+</html>
