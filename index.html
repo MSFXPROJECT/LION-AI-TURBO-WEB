@@ -1,165 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LION AI TURBO 1.4</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: #000000;
-      color: #e0e0e0;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    .header {
-      text-align: center;
-      padding: 60px 20px 40px;
-      background: radial-gradient(circle at center, rgba(0, 229, 255, 0.08) 0%, #000 70%);
-    }
-
-    .emblem {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 20px;
-      background: radial-gradient(circle, #00e5ff 0%, transparent 70%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      box-shadow: 0 0 40px rgba(0, 229, 255, 0.4);
-    }
-
-    .emblem::before {
-      content: "🦁";
-      font-size: 48px;
-      filter: drop-shadow(0 0 10px #00e5ff);
-    }
-
-    h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, #00e5ff, #ffffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: rgba(0, 229, 255, 0.1);
-      border: 1px solid #00e5ff;
-      color: #00e5ff;
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
-    }
-
-    .subtitle {
-      max-width: 600px;
-      margin: 0 auto;
-      color: #aaa;
-      font-size: 1.1rem;
-    }
-
-    .intro {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(0, 229, 255, 0.2);
-      border-radius: 16px;
-      backdrop-filter: blur(10px);
-    }
-
-    .intro h2 {
-      color: #00e5ff;
-      margin-bottom: 15px;
-      font-size: 1.5rem;
-    }
-
-    .ai-container {
-      max-width: 520px;
-      margin: 40px auto 60px;
-      padding: 0 20px;
-    }
-
-    .ai-frame {
-      width: 100%;
-      height: 780px;
-      border: 1px solid rgba(0, 229, 255, 0.3);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 0 50px rgba(0, 229, 255, 0.15);
-      background: #000;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #666;
-      font-size: 0.9rem;
-      border-top: 1px solid #111;
-    }
-
-    .footer a {
-      color: #00e5ff;
-      text-decoration: none;
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2.2rem; }
-      .ai-frame { height: 650px; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#020611">
+<meta name="description" content="LION AI — simple, fast, yours. Explore the LION AI studio, tools and projects.">
+<title>LION AI | Simple. Fast. Yours.</title>
+<link rel="icon" href="lion-emblem.jpg" type="image/jpeg">
+<style>
+:root{--bg:#020611;--panel:rgba(3,12,29,.82);--cyan:#08c8ff;--blue:#087bff;--text:#f5f9ff;--muted:#b5c5dd;--line:rgba(0,159,255,.55);--glow:0 0 26px rgba(0,130,255,.35)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:90px}body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1320px,calc(100% - 44px));margin:auto}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 50% 32%,rgba(0,76,190,.24),transparent 36%),radial-gradient(ellipse at 14% 48%,rgba(0,91,255,.19),transparent 27%),radial-gradient(ellipse at 87% 49%,rgba(0,91,255,.18),transparent 29%),linear-gradient(180deg,#020611,#01040b 70%,#020611)}
+body:after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.32;background-image:radial-gradient(2px 2px at 20% 25%,#53caff 50%,transparent 60%),radial-gradient(1px 1px at 74% 31%,#fff 50%,transparent 60%),radial-gradient(2px 2px at 86% 65%,#168cff 50%,transparent 60%),radial-gradient(1px 1px at 34% 72%,#fff 50%,transparent 60%),radial-gradient(1px 1px at 60% 18%,#39baff 50%,transparent 60%);background-size:390px 310px,440px 370px,520px 430px,360px 330px,470px 390px}
+.nav-shell{position:sticky;top:0;z-index:30;background:rgba(1,6,16,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(0,153,255,.4);box-shadow:0 5px 30px rgba(0,65,160,.12)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;font-size:1.25rem;font-weight:900;letter-spacing:.06em;white-space:nowrap}.brand img{width:49px;height:49px;object-fit:cover;border-radius:50%;border:1px solid rgba(0,178,255,.65);box-shadow:0 0 18px rgba(0,145,255,.45)}.brand em{font-style:normal;color:var(--cyan)}.links{display:flex;align-items:center;gap:clamp(14px,2.5vw,34px);font-size:.94rem;color:#dceaff}.links a{padding:9px 0;transition:.2s}.links a:hover,.links a.active{color:#26d7ff;text-shadow:0 0 15px #008cff}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--cyan);border-radius:999px;padding:11px 21px;font-weight:750;transition:.22s;cursor:pointer}.nav-cta{white-space:nowrap;box-shadow:var(--glow);color:#aeeeff}.nav-cta:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 0 32px rgba(0,153,255,.55)}.menu{display:none;background:transparent;border:1px solid var(--line);color:white;border-radius:10px;padding:8px 11px;font-size:1.2rem}
+.hero{min-height:680px;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:48px 0 58px;isolation:isolate}.hero:before{content:"";position:absolute;z-index:-1;inset:0 -10vw;background:radial-gradient(ellipse at 50% 40%,rgba(0,102,255,.18),transparent 45%),radial-gradient(ellipse at 50% 96%,rgba(0,155,255,.25),transparent 28%);pointer-events:none}.hero:after{content:"";position:absolute;z-index:-1;bottom:0;left:-15vw;width:130vw;height:130px;border-top:3px solid rgba(0,176,255,.85);border-radius:50% 50% 0 0;box-shadow:0 -8px 34px rgba(0,126,255,.55),inset 0 18px 32px rgba(0,93,255,.12);transform:perspective(250px) rotateX(8deg);pointer-events:none}.hero-inner{max-width:980px}.emblem-wrap{width:230px;height:230px;margin:0 auto 6px;position:relative;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(0,155,255,.65);box-shadow:0 0 24px rgba(0,128,255,.34),inset 0 0 30px rgba(0,95,255,.12);animation:ringpulse 4s ease-in-out infinite}.emblem-wrap:before,.emblem-wrap:after{content:"";position:absolute;inset:-13px;border:1px solid rgba(0,132,255,.28);border-radius:50%;animation:rotate 22s linear infinite}.emblem-wrap:after{inset:-25px;border-color:rgba(0,132,255,.15);animation-direction:reverse;animation-duration:32s}.emblem{width:205px;height:205px;object-fit:cover;border-radius:50%;mix-blend-mode:screen;filter:drop-shadow(0 0 16px #007fff);mask-image:radial-gradient(circle,black 52%,rgba(0,0,0,.88) 68%,transparent 76%)}.hero h1{font-size:clamp(3.4rem,9vw,7.3rem);line-height:.98;letter-spacing:-.055em;font-weight:950;margin:6px 0 4px;text-transform:uppercase;font-style:italic;text-shadow:0 0 28px rgba(0,145,255,.3)}.hero h1 span{background:linear-gradient(100deg,#fff 10%,#d9f3ff 45%,#00aaff 80%);-webkit-background-clip:text;background-clip:text;color:transparent}.tagline{color:#18caff;letter-spacing:.32em;font-weight:850;font-size:clamp(.9rem,2vw,1.25rem);text-shadow:0 0 16px rgba(0,153,255,.65)}.tagline:before,.tagline:after{content:"";display:inline-block;width:clamp(22px,7vw,90px);height:1px;background:linear-gradient(90deg,transparent,#00bfff);vertical-align:middle;margin:0 15px}.tagline:after{transform:scaleX(-1)}.lead{max-width:760px;margin:18px auto 0;color:#d0def1;font-size:clamp(1rem,2vw,1.2rem)}.actions{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:27px}.btn.primary{background:linear-gradient(110deg,#00bfff,#075bff);box-shadow:0 0 24px rgba(0,125,255,.38);border-color:#55ddff}.btn.secondary{border-color:rgba(177,215,255,.65);background:rgba(2,8,20,.72)}.scroll-hint{margin-top:33px;color:#75a7d8;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase}
+.section{padding:42px 0 70px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}.eyebrow{color:var(--cyan);font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;font-weight:850}.section h2{font-size:clamp(1.8rem,4vw,2.65rem);line-height:1.15;margin-top:7px}.section-desc{color:var(--muted);max-width:540px}.glass{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:23px;background:linear-gradient(125deg,rgba(3,12,29,.94),rgba(1,6,17,.88));box-shadow:0 15px 60px rgba(0,0,0,.3),inset 0 1px rgba(255,255,255,.05)}.about{padding:clamp(25px,4vw,45px)}.about:after{content:"";position:absolute;right:-25px;bottom:-105px;width:360px;height:360px;background:url('lion-emblem.jpg') center/cover no-repeat;opacity:.12;mix-blend-mode:screen;mask-image:radial-gradient(circle,black 20%,transparent 72%);pointer-events:none}.about h3{font-size:1.65rem;margin-bottom:12px}.about h3 span{color:var(--cyan)}.about p{color:#c6d5e9;max-width:880px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{padding:25px;min-height:190px;transition:.25s}.card:hover{transform:translateY(-5px);border-color:rgba(24,202,255,.8);box-shadow:0 12px 40px rgba(0,104,255,.18)}.card-icon{width:47px;height:47px;display:grid;place-items:center;border:1px solid var(--line);border-radius:14px;color:var(--cyan);font-size:1.5rem;background:rgba(0,130,255,.12);margin-bottom:16px;box-shadow:inset 0 0 18px rgba(0,122,255,.12)}.card h3{font-size:1.12rem;margin-bottom:7px}.card p{font-size:.94rem;color:var(--muted)}.ai-section{padding-top:8px}.ai-frame{height:760px;border-radius:22px;overflow:hidden;background:#02060d;border:1px solid rgba(24,202,255,.5);box-shadow:0 0 55px rgba(0,105,255,.18)}.ai-frame iframe{width:100%;height:100%;border:0;background:#02060d}.frame-note{color:#8298b7;font-size:.85rem;margin-top:12px}.frame-note a,.footer a{color:var(--cyan)}.footer{border-top:1px solid rgba(24,202,255,.24);padding:28px 0 38px;color:#8196b5;font-size:.9rem;background:rgba(0,3,10,.45)}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer strong{color:#e5f5ff}
+@keyframes rotate{to{transform:rotate(360deg)}}@keyframes ringpulse{50%{box-shadow:0 0 34px rgba(0,128,255,.55),inset 0 0 38px rgba(0,95,255,.2)}}
+@media(max-width:850px){.links{display:none;position:absolute;top:76px;left:18px;right:18px;padding:18px;background:#061329;border:1px solid var(--line);border-radius:16px;flex-direction:column;align-items:stretch}.links.open{display:flex}.links a{padding:8px}.menu{display:block}.nav-cta{margin-left:auto;padding:9px 13px;font-size:.84rem}.cards{grid-template-columns:1fr 1fr}.hero{min-height:630px}}
+@media(max-width:560px){.wrap{width:calc(100% - 30px)}.brand{font-size:1rem;gap:8px}.brand img{width:39px;height:39px}.nav{min-height:66px;gap:9px}.nav-cta{font-size:.75rem;padding:8px 10px}.links{top:66px}.emblem-wrap{width:175px;height:175px}.emblem{width:158px;height:158px}.hero{min-height:590px;padding:38px 0 50px}.hero h1{font-size:clamp(3rem,15vw,5rem)}.tagline{letter-spacing:.18em}.tagline:before,.tagline:after{margin:0 6px;width:16px}.lead{font-size:1rem}.actions{gap:10px}.btn{padding:10px 14px;font-size:.88rem}.cards{grid-template-columns:1fr}.card{min-height:unset}.section{padding-bottom:54px}.ai-frame{height:680px}.section-head{align-items:flex-start;flex-direction:column}.footer-inner{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
 </head>
 <body>
-  <header class="header">
-    <div class="emblem"></div>
-    <div class="badge">LION TURBO 1.4</div>
-    <h1>LION AI</h1>
-    <p class="subtitle">High-velocity intelligence with context-aware multi-turn reasoning and LION Directives.</p>
-  </header>
-
-  <section class="intro">
-    <h2>About</h2>
-    <p>Hi, I’m Mahiru Sanumitha from Sri Lanka. I build personal technology projects under the name <strong>LION PROJECTS</strong>.</p>
-    <br>
-    <p>LION AI is my main project — a futuristic personal AI assistant focused on being useful, reliable, and intelligent. It features Turbo, Strategy, and Code modes, all built with a pure black interface and electric cyan accents.</p>
-    <br>
-    <p><strong>LION PROJECTS — ONE VISION. ONE IDENTITY.</strong></p>
-  </section>
-
-  <div class="ai-container">
-    <div class="ai-frame">
-      <iframe
-        src="https://lion-ai-turbo.ai.studio"
-        title="LION AI TURBO 1.4"
-        allow="clipboard-write"
-        loading="lazy">
-      </iframe>
-    </div>
-  </div>
-
-  <footer class="footer">
-    <p>Built with Google AI Studio • <a href="https://lion-ai-turbo.ai.studio" target="_blank">Open full LION AI</a></p>
-    <p style="margin-top: 8px;">Geometric lion • Pure black • Electric cyan</p>
-  </footer>
-</body>
-</html>
+<header class="nav-shell"><nav class="nav wrap" aria-label="Main navigation">
+  <a class="brand" href="#home" aria-label="LION AI home"><img src="lion-emblem.jpg" alt="LION AI blue lion emblem"><span>LION <em>AI</em></span></a>
+  <div class="links" id="navLinks"><a class="active" href="#home">⌂ &nbsp;Home</a><a href="#tools">▦ &nbsp;Tools</a><a href="#features">☆ &nbsp;Features</a><a href="#about">▤ &nbsp;About</a><a href="#projects">‹/› &nbsp;Projects</a></div>
+  <a class="nav-cta" href="#tools">⚡ Try LION AI&nbsp; →</a><button class="menu" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+</nav></header>
+<main>
+<section class="hero wrap" id="home"><div class="hero-inner">
+  <div class="emblem-wrap"><img class="emblem" src="lion-emblem.jpg" alt="Glowing electric-blue lion head logo"></div>
+  <h1><span>LION AI</span></h1><div class="tagline">SIMPLE. FAST. YOURS.</div>
+  <p class="lead">High-velocity intelligence with context-aware multi-turn reasoning and LION Directives.</p>
+  <div class="actions"><a class="btn primary" href="#tools">▶ &nbsp;Explore AI Tools &nbsp;→</a><a class="btn secondary" href="#about">▤ &nbsp;Learn More</a></div>
+  <div class="scroll-hint">↓ &nbsp; Discover the LION ecosystem</div>
+</div></section>
+<section class="section wrap" id="about"><div class="glass about"><div class="eyebrow">The vision behind the work</div><h2>About <span style="color:var(--cyan)">LION AI</span></h2><p style="margin-top:17px">LION AI is an advanced AI studio from <strong>MSFXPROJECT</strong> — built to create useful tools, creative solutions and intelligent experiences.</p><p style="margin-top:12px">Explore LION AI Turbo, discover the projects in development, and follow the growth of the LION ecosystem.</p></div></section>
+<section class="section wrap" id="features"><div class="section-head"><div><div class="eyebrow">Made for momentum</div><h2>LION AI Features</h2></div><p class="section-desc">A focused AI experience designed to help you think, build and create.</p></div><div class="cards">
+  <article class="glass card"><div class="card-icon">⚡</div><h3>Fast Assistance</h3><p>Conversational AI assistance for questions, ideas and everyday tasks.</p></article>
+  <article class="glass card"><div class="card-icon">✧</div><h3>Context-Aware</h3><p>Multi-turn conversations that keep track of the discussion and its context.</p></article>
+  <article class="glass card"><div class="card-icon">⌘</div><h3>Creative & Code</h3><p>Explore programming, writing, planning and creative project workflows.</p></article>
+</div></section>
+<section class="section wrap" id="projects"><div class="section-head"><div><div class="eyebrow">Built to create</div><h2>Inside the LION Ecosystem</h2></div><p class="section-desc">A growing collection of AI experiences and technology projects.</p></div><div class="cards">
+  <article class="glass card"><div class="card-icon">⚡</div><h3>LION AI Turbo</h3><p>Your conversational AI assistant with context-aware multi-turn reasoning.</p></article>
+  <article class="glass card"><div class="card-icon">⌘</div><h3>Code Projects</h3><p>A home for programming experiments, tools and things we're building.</p></article>
+  <article class="glass card"><div class="card-icon">🚀</div><h3>More Projects</h3><p>New LION projects and experiences will be introduced here.</p></article>
+</div></section>
+<section class="section wrap ai-section" id="tools"><div class="section-head"><div><div class="eyebrow">Meet your AI assistant</div><h2>Try LION AI Turbo</h2></div><p class="section-desc">Open the LION AI experience below, or launch it in a separate tab.</p></div><div class="ai-frame"><iframe src="https://lion-ai-turbo.ai.studio" title="LION AI Turbo assistant" allow="clipboard-write" loading="lazy"></iframe></div><p class="frame-note">If the assistant does not load inside this frame, <a href="https://lion-ai-turbo.ai.studio" target="_blank" rel="noopener">open LION AI directly ↗</a>.</p></section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><div><strong>✦ LION AI</strong><br>Simple. Fast. Yours.</div><div>Built by MSFXPROJECT<br>© <span id="year"></span> LION PROJECTS</div></div></footer>
+<script>
+const menuBtn=document.getElementById('menuBtn');const navLinks=document.getElementById('navLinks');menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body></html>
